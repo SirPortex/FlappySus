@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FlappyController : MonoBehaviour
 {
-    public float jumpForce;
+    public float jumpForce, rotationSpeed;
     public Animator animator;
 
     private Rigidbody rb;
-    private bool jumpPressed;
 
     // Start is called before the first frame update
     void Start()
@@ -22,23 +21,12 @@ public class FlappyController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpPressed = true;
-            //jump
+            rb.velocity = Vector2.up * jumpForce;
         }
     }
 
     private void FixedUpdate()
     {
-        ApplyJumpSpeed();
-    }
-
-    void ApplyJumpSpeed()
-    {
-        if (jumpPressed)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            rb.AddForce(transform.up * jumpForce);
-            jumpPressed = false;
-        }
+        transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * rotationSpeed);
     }
 }
