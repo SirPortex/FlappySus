@@ -27,6 +27,6 @@ public class FlappyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * rotationSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * - rotationSpeed);
     }
 }
