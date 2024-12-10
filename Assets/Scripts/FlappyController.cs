@@ -6,6 +6,7 @@ public class FlappyController : MonoBehaviour
 {
     public float jumpForce, rotationSpeed;
     public Animator animator;
+    public AudioClip jumpSound, hitSound;
 
     private Rigidbody rb;
 
@@ -22,11 +23,22 @@ public class FlappyController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector2.up * jumpForce;
+            AudioManager.instance.PlayAudio(jumpSound, "JumpSound", false, 0.08f);
         }
     }
 
     private void FixedUpdate()
     {
         transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * - rotationSpeed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Pipe"))
+        {
+            AudioManager.instance.PlayAudio(hitSound, "HitSound", false, 0.08f);
+            Debug.Log("Te chocaste");
+            Destroy(this);
+        }
     }
 }
