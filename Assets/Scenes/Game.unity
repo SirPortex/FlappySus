@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 4
-  rotationSpeed: 0
+  rotationSpeed: 5
   animator: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 6e3681f218b54f449bb490c9dca65614, type: 3}
   hitSound: {fileID: 8300000, guid: f4377ede271a78c4198ed1324a6c33ca, type: 3}
@@ -264,6 +264,10 @@ MonoBehaviour:
   maxTime: 2
   heightRange: 1.5
   currentTime: 0
+  secondMaxTime: 1.5
+  secondHightRange: 2
+  masterTime: 0
+  timeLevelTwo: 20
 --- !u!1 &593748872
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 7738242254211849850, guid: f5b0c796af1765445a2ec2a28487810d, type: 3}
   poolSize: 5
-  shouldExpand: 0
+  shouldExpand: 1
 --- !u!4 &988086379
 Transform:
   m_ObjectHideFlags: 0

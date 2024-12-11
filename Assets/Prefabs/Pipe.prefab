@@ -77,8 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fc22a7c203a8548aff7bd8a5d8ebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
+  maxTime: 8
   points: 1
   pointSound: {fileID: 8300000, guid: 99829fd48df2908429628b507eb0e53b, type: 3}
+  invisible: {fileID: 4432624814157057882}
 --- !u!1001 &122856039875259370
 PrefabInstance:
   m_ObjectHideFlags: 0
