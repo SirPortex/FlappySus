@@ -264,10 +264,9 @@ MonoBehaviour:
   maxTime: 2
   heightRange: 1.5
   currentTime: 0
-  secondMaxTime: 1.5
-  secondHightRange: 2
   masterTime: 0
   timeLevelTwo: 20
+  timeLevelThree: 40
 --- !u!1 &593748872
 GameObject:
   m_ObjectHideFlags: 0

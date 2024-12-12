@@ -344,3 +344,7 @@ MonoBehaviour:
   pipeSpeed: 3
   currentTime: 0
   maxTime: 8
+  masterTime: 0
+  timeLevelTwo: 20
+  timeLevelThree: 40
+  pipeMaterial: {fileID: 2100000, guid: 20d8414909a84194ab719b1b5b3c6ed4, type: 2}

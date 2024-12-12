@@ -6,6 +6,8 @@ public class Pipe : MonoBehaviour
 {
     public float pipeSpeed, currentTime, maxTime;
 
+    public Material pipeMaterial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +26,6 @@ public class Pipe : MonoBehaviour
             currentTime = 0; // igualamos a 0 el contador
             gameObject.SetActive(false); //Se "devuelve" a la pool
         }
+
     }
 }
