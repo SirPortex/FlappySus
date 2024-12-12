@@ -169,6 +169,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 604c8eddd64b8774d8862eb4fa19943a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9019163863817318225}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 604c8eddd64b8774d8862eb4fa19943a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7227202272674246551}
   m_SourcePrefab: {fileID: 100100000, guid: 604c8eddd64b8774d8862eb4fa19943a, type: 3}
 --- !u!4 &450009869919702017 stripped
 Transform:
@@ -201,6 +204,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.030596146, y: 0.03059613, z: 0.035030723}
   m_Center: {x: -0.000000007916242, y: -0.000000014901161, z: -0.0038415063}
+--- !u!114 &7227202272674246551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969700240729544379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298887d25f73ef24183abcb59dea0c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallingSound: {fileID: 8300000, guid: e0d731c0681d04649ae734f8711e2126, type: 3}
 --- !u!1001 &7467719720527602475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,7 +360,7 @@ MonoBehaviour:
   pipeSpeed: 3
   currentTime: 0
   maxTime: 8
-  masterTime: 0
-  timeLevelTwo: 20
-  timeLevelThree: 40
+  deathTime: 0
+  resetTime: 2
   pipeMaterial: {fileID: 2100000, guid: 20d8414909a84194ab719b1b5b3c6ed4, type: 2}
+  fallingSound: {fileID: 8300000, guid: e0d731c0681d04649ae734f8711e2126, type: 3}

@@ -15,17 +15,17 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
 
     public void OnUnityAdsAdLoaded(string placementId) //Cuando haya cargado el anuncio
     {
-        //throw new System.NotImplementedException();
+        throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message) // Cuando el anuncio ha fallado a la hora de cargar
     {
-        //throw new System.NotImplementedException();
+        throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsShowClick(string placementId) //Cuando clikeas en el anuncio
     {
-        //throw new System.NotImplementedException();
+        throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState) // Cuando el anuncio se ha completado
@@ -40,7 +40,7 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
 
     public void OnUnityAdsShowStart(string placementId) // Cuando el anuncio empieza
     {
-        //throw new System.NotImplementedException();
+        throw new System.NotImplementedException();
     }
 
     void Awake()

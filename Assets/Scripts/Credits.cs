@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Credits : MonoBehaviour
 {
-    public float speed, currentTime, maxTime;
+    public float speed, currentTime, maxTime, secondMaxTime;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,13 @@ public class Credits : MonoBehaviour
         if(currentTime >= maxTime)
         {
             speed = 0;
+            
+        }
+
+        if(currentTime >= secondMaxTime)
+        {
             currentTime = 0;
+            GameManager.instance.LoadScene("Menu");
         }
 
     }

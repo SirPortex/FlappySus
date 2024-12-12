@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pipe : MonoBehaviour
 {
-    public float pipeSpeed, currentTime, maxTime;
+    public float pipeSpeed, currentTime, maxTime, deathTime, resetTime;
 
     public Material pipeMaterial;
+
+    public AudioClip fallingSound;
 
 
     // Start is called before the first frame update
@@ -28,4 +32,23 @@ public class Pipe : MonoBehaviour
         }
 
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<FlappyController>())
+        {
+            StartCoroutine(Death());
+        }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.instance.PlayAudio(fallingSound, "FallingSound", false, 0.12f);
+        yield return new WaitForSeconds(2);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.instance.LoadScene("Game");
+        AudioManager.instance.ClearAudio();
+        
+    }
+
 }

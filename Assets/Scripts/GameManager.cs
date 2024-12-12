@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            points = 0;
             time = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             AudioManager.instance.ClearAudio();
