@@ -808,7 +808,7 @@ MonoBehaviour:
   androidID: 5749605
   appleID: 5749604
   testMode: 1
-  adType: Banner_Android
+  adType: Interstitial_Android
 --- !u!4 &663997750
 Transform:
   m_ObjectHideFlags: 0

@@ -34,7 +34,6 @@ public class FlappyController : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
             AudioManager.instance.PlayAudio(jumpSound, "JumpSound", false, 0.08f);
-            AdDisplayManager.instance.ShowAd();
         }
 
 #elif UNITY_ANDROID //PARA QUE FUNCIONE EN ANDROID
@@ -45,7 +44,6 @@ public class FlappyController : MonoBehaviour
             {
                 rb.velocity = Vector2.up * jumpForce;
                 AudioManager.instance.PlayAudio(jumpSound, "JumpSound", false, 0.08f);
-                            AdDisplayManager.instance.ShowAd();
             }
         }
 #endif

@@ -11,16 +11,18 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
     public int androidID, appleID; //IDs de android y Iphone
     public bool testMode = true;
 
-    public string adType = "Banner_Android";
+    public string adType = "Interstitial_Android"; //Interstitial_Android , Banner_Android
 
     public void OnUnityAdsAdLoaded(string placementId) //Cuando haya cargado el anuncio
     {
         //throw new System.NotImplementedException();
+        Advertisement.Show(adType, this);
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message) // Cuando el anuncio ha fallado a la hora de cargar
     {
         //throw new System.NotImplementedException();
+        Debug.Log("Ha fallado: "+ message);
     }
 
     public void OnUnityAdsShowClick(string placementId) //Cuando clikeas en el anuncio
@@ -75,7 +77,6 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
         if (Advertisement.isInitialized)
         {
             Advertisement.Load(adType, this);
-            Advertisement.Show(adType, this);
         }
     }
 

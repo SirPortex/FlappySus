@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "bcc3f5ab",
+    "m_SelectedDeviceId": "40e2438b",
     "m_SelectedProcess": {
-        "deviceId": "bcc3f5ab",
+        "deviceId": "40e2438b",
         "name": "com.DefaultCompany.FlappySusy",
-        "processId": 22057,
+        "processId": 11697,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -30,6 +30,24 @@
             "deviceId": "bcc3f5ab",
             "name": "com.DefaultCompany.FlappySusy",
             "processId": 22057,
+            "exited": false
+        },
+        {
+            "deviceId": "40e2438b",
+            "name": "com.miui.home",
+            "processId": 20958,
+            "exited": false
+        },
+        {
+            "deviceId": "40e2438b",
+            "name": "com.DefaultCompany.FlappySusy",
+            "processId": 10530,
+            "exited": false
+        },
+        {
+            "deviceId": "40e2438b",
+            "name": "com.DefaultCompany.FlappySusy",
+            "processId": 11697,
             "exited": false
         }
     ],
