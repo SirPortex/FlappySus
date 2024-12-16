@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; //el game manager controla las variables del juego y es accesible a todos
     private float time;
-    private int points;
+    private int points, hits, currentAdd;
     private KeyCode Esc = KeyCode.Escape;
     //public AudioClip SelectClip;
+
 
     public enum GameManagerVariables { TIME, POINTS };//para facilitar el codigo
 
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Start()
+    {
+        currentAdd = Random.Range(3, 6);
+    }
+
     void Update()
     {
         time += Time.deltaTime;
@@ -59,6 +66,29 @@ public class GameManager : MonoBehaviour
         return points;
     }
 
+    public int GetAdd()
+    {
+        return currentAdd;
+    }
+
+
+    public int GetHits()
+    {
+        return hits;
+    }
+
+    public void SetAdd(int value)
+    {
+        currentAdd = value;
+    }
+
+    public void SetHits(int value)
+    {
+        hits = value;
+    }
+
+
+
     // setter
     public void SetPoints(int value)
     {
@@ -77,10 +107,5 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("EXIT");
         Application.Quit();
-    }
-
-    internal void LoadScene(object sceneName)
-    {
-        throw new NotImplementedException();
     }
 }
