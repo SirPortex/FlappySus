@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener, IUnityAdsInitializationListener
 {
     
     public static AdDisplayManager instance; // Singletone
@@ -61,10 +61,10 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
         if (!Advertisement.isInitialized) //Pool de anuncios
         {
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR || UNITY_ANDROID
-            Advertisement.Initialize(androidID.ToString(), testMode);
+            Advertisement.Initialize(androidID.ToString(), testMode, this);
             
 #elif UNITY_IOS
-            Advertisement.Initialize(appleID.ToString(), testMode);
+            Advertisement.Initialize(appleID.ToString(), testMode, this);
             
 #endif
         }
@@ -74,13 +74,23 @@ public class AdDisplayManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
     {
         if (Advertisement.isInitialized)
         {
-            Advertisement.Load(adType);
-            Advertisement.Show(adType);
+            Advertisement.Load(adType, this);
+            Advertisement.Show(adType, this);
         }
     }
 
     void Update()
     {
         
+    }
+
+    public void OnInitializationComplete()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+    {
+        //throw new System.NotImplementedException();
     }
 }
